@@ -1,0 +1,15 @@
+[Unit]
+Description=Lesson Schedule Telegram Bot
+After=network.target
+
+[Service]
+User=qutb
+Group=qutb
+WorkingDirectory=/home/qutb/lesson_schedule_assistant/bot
+EnvironmentFile=/home/qutb/lesson_schedule_assistant/bot/.env
+ExecStart=/home/qutb/lesson_schedule_assistant/bot/.venv/bin/python main.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
